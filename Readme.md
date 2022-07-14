@@ -27,3 +27,5 @@ To uninstall the mod, simply remove `BepInEx/plugins/de.benediktwerner.stackland
 
 If you aren't using any other BepInEx mods, you can also completley remove BepInEx by deleting the `BepInEx` directory and the `changelog.txt`, `doorstop_config.ini`
 and `winhttp.dll` files.
+
+**Warning**: This will shove all the cards back into the original world bounds which may cause lag or ruin organization of the cards.
