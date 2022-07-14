@@ -12,7 +12,7 @@ namespace LargerBoard
 
         private void Awake()
         {
-            maxSize = Config.Bind("General", "Max World Size", 2.5f);
+            maxSize = Config.Bind("General", "Max World Size", 5f, "The original max size in vanilla is 2.5");
 
             Harmony.CreateAndPatchAll(typeof(Plugin));
         }
