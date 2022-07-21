@@ -1,7 +1,7 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
     <TargetFramework>net46</TargetFramework>
-    <AssemblyName>de.benediktwerner.stacklands.LargerBoard</AssemblyName>
+    <AssemblyName>LargerBoard</AssemblyName>
     <Product>LargerBoard</Product>
     <Description>Increase size of the board</Description>
     <Version>1.1.0</Version>
