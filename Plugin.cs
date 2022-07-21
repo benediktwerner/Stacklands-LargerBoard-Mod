@@ -23,7 +23,7 @@ namespace LargerBoard
         private static void WorldManager__DetermineTargetWorldSize__Prefix(ref bool __runOriginal, WorldManager __instance, GameBoard board, out float __result)
         {
             __runOriginal = false;
-            __result = Mathf.Clamp((float)__instance.CardCapIncrease(board) * 0.03f, 0.15f, maxSize.Value);
+            __result = Mathf.Clamp(__instance.CardCapIncrease(board) * 0.03f, 0.15f, maxSize.Value);
         }
     }
 }
