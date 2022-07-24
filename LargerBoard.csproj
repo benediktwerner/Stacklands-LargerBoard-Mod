@@ -4,7 +4,7 @@
     <AssemblyName>LargerBoard</AssemblyName>
     <Product>LargerBoard</Product>
     <Description>Increase size of the board</Description>
-    <Version>1.1.0</Version>
+    <Version>1.1.1</Version>
     <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
     <LangVersion>latest</LangVersion>
   </PropertyGroup>

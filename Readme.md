@@ -34,3 +34,8 @@ and `winhttp.dll` files.
 - Github: https://github.com/benediktwerner/Stacklands-LargerBoard-Mod
 - Thunderstore: https://stacklands.thunderstore.io/package/benediktwerner/LargerBoard
 - Nexusmods: https://www.nexusmods.com/stacklands/mods/8
+
+## Changelog
+
+- v1.1.1: Fix board rendering on the island
+- v1.1.0: Initial release (for game version v1.1.x)
