@@ -26,27 +26,23 @@ namespace LargerBoard
             __result = Mathf.Clamp(__instance.CardCapIncrease(board) * 0.03f, 0.15f, maxSize.Value);
         }
 
-        private static GameBoard currentBoard = null;
-        private static Material currentBoardMaterial = null;
+        private static Material islandMaterial = null;
 
         [HarmonyPatch(typeof(GameBoard), nameof(GameBoard.Update))]
         [HarmonyPrefix]
         private static void FixShader(GameBoard __instance)
         {
-            if (__instance.IsCurrent)
+            if (__instance.IsCurrent && __instance.Id == "island")
             {
-                if (currentBoard != __instance)
+                if (islandMaterial == null) islandMaterial = __instance.GetComponent<MeshRenderer>().material;
+                if (islandMaterial == null) return;
+                if (__instance.WorldSizeIncrease < 2.5f)
                 {
-                    currentBoard = __instance;
-                    currentBoardMaterial = __instance.GetComponent<MeshRenderer>().material;
-                }
-                if (currentBoard.WorldSizeIncrease < 2.5f)
-                {
-                    currentBoardMaterial.SetVector("_Rect", new Vector4(4.3f, 0, 2.47f, -0.43f));
+                    islandMaterial.SetVector("_Rect", new Vector4(4.3f, 0, 2.47f, -0.43f));
                 }
                 else
                 {
-                    currentBoardMaterial.SetVector("_Rect", new Vector4(1.8f + currentBoard.WorldSizeIncrease, 0, currentBoard.WorldSizeIncrease, -0.43f));
+                    islandMaterial.SetVector("_Rect", new Vector4(1.8f + __instance.WorldSizeIncrease, 0, __instance.WorldSizeIncrease, -0.43f));
                 }
             }
         }
