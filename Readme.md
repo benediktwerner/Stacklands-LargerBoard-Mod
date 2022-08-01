@@ -16,10 +16,10 @@ This mod requires BepInEx to work. BepInEx is a modding framework which allows m
 
 1. Download BepInEx from https://github.com/BepInEx/BepInEx/releases. On Windows, use the x64 version, on Linux and macOS, use the unix version.
 2. Extract all files to your Stacklands folder. It should look like this:\
-![](file_structure.png)
-3. **Linux and MacOS only**: Additionally follow step three from [Installing BepInEx](https://docs.bepinex.dev/articles/user_guide/installation/index.html?tabs=tabid-nix)
-4. Download this mod and extract it into `BepInEx/plugins/`
-5. Launch the game
+![](https://raw.githubusercontent.com/benediktwerner/Stacklands-LargerBoard-Mod/master/file_structure.png)
+1. **Linux and MacOS only**: Additionally follow step three from [Installing BepInEx](https://docs.bepinex.dev/articles/user_guide/installation/index.html?tabs=tabid-nix)
+2. Download this mod and extract it into `BepInEx/plugins/`
+3. Launch the game
 
 ## Uninstallation
 
@@ -37,5 +37,6 @@ and `winhttp.dll` files.
 
 ## Changelog
 
+- v1.1.2: Update Thunderstore Readme to fix image link
 - v1.1.1: Fix board rendering on the island
 - v1.1.0: Initial release (for game version v1.1.x)
