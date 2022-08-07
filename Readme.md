@@ -14,11 +14,8 @@ after the first start.
 ## Manual Installation
 This mod requires BepInEx to work. BepInEx is a modding framework which allows multiple mods to be loaded.
 
-1. Download BepInEx from https://github.com/BepInEx/BepInEx/releases. On Windows, use the x64 version, on Linux and macOS, use the unix version.
-2. Extract all files to your Stacklands folder. It should look like this:\
-![](https://raw.githubusercontent.com/benediktwerner/Stacklands-LargerBoard-Mod/master/file_structure.png)
-1. **Linux and MacOS only**: Additionally follow step three from [Installing BepInEx](https://docs.bepinex.dev/articles/user_guide/installation/index.html?tabs=tabid-nix)
-2. Download this mod and extract it into `BepInEx/plugins/`
+1. Download and install [BepInEx](https://stacklands.thunderstore.io/package/BepInEx/BepInExPack_Stacklands/)
+2. Download this mod and extract it into `BepInEx/plugins/` (if the `plugins` directory doesn't exist, manually create it or launch the game once after installing BepInEx and it will be created automatically)
 3. Launch the game
 
 ## Uninstallation
@@ -26,7 +23,7 @@ This mod requires BepInEx to work. BepInEx is a modding framework which allows m
 To uninstall the mod, simply remove `BepInEx/plugins/LargerBoard.dll` in the game's installation directory.
 
 If you aren't using any other BepInEx mods, you can also completely remove BepInEx by deleting the `BepInEx` directory and the `changelog.txt`, `doorstop_config.ini`
-and `winhttp.dll` files.
+and `winhttp.dll` files. Or you can simply remove and reinstall the game.
 
 **Warning**: This will shove all the cards back into the original world bounds which may cause lag or ruin organization of the cards.
 
@@ -37,6 +34,7 @@ and `winhttp.dll` files.
 
 ## Changelog
 
+- v1.1.3: Update Thunderstore Readme
 - v1.1.2: Update Thunderstore Readme to fix image link
 - v1.1.1: Fix board rendering on the island
 - v1.1.0: Initial release (for game version v1.1.x)
