@@ -43,6 +43,7 @@ and `winhttp.dll` files. Or you can simply remove and reinstall the game.
 
 ## Changelog
 
+- v1.1.4: Fix island board not getting updated after going back to the main menu once
 - v1.1.3: Update Thunderstore Readme
 - v1.1.2: Update Thunderstore Readme to fix image link
 - v1.1.1: Fix board rendering on the island
