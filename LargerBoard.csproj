@@ -23,7 +23,7 @@
   <PropertyGroup>
     <GAME_NAME>Stacklands</GAME_NAME>
     <GAME_STEAM_ID>1948280</GAME_STEAM_ID>
-    <MOD_NAME>BugFixes</MOD_NAME>
+    <MOD_NAME>LargerBoard</MOD_NAME>
     <R2MM_PROFILE>Default</R2MM_PROFILE>
   </PropertyGroup>
   <PropertyGroup>
