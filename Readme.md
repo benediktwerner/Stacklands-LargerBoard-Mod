@@ -2,14 +2,17 @@
 
 Increase the upper limit of the board size.
 
-The board size in the game increases with the card limit (i.e. by building Sheds and Warehouses) but
-there is an upper limit which is reached after just 21 Sheds or 6 Warehouses (or a combination thereof).
-This mod allows increasing the limit by an arbitrary amount.
+The board size in the game increases with the card limit (i.e. by building Sheds and Warehouses) and beyond that using Lighthouses but
+there is an upper limit which is reached after 11 lighthouses.
+This mod allows increasing the limit by an arbitrary amount (though the game breaks above ~15).
 
-By default, the max board size is doubled (the original value is 2.5, the new value is 5).
+For backwards compbatibility (since this mod already existed before Lighthouses were a thing), this mod also
+allows you to increase the maximum board size reachable using just sheds and warehouses.
 
-To change it, you can adjust the configuration which will be generated at `BepInEx/config/de.benediktwerner.stacklands.LargerBoard.cfg`
-after the first start.
+By default, the max board size without lighthouses is unchanged and the max size with lighthouses is roughly doubled (the original value is 5.55, the new value is 10).
+
+To change it, you can adjust the configuration by editing the `BepInEx/config/de.benediktwerner.stacklands.LargerBoard.cfg` file which will be generated
+after the first start. If you're using a mod manager, it also has a section to adjust mod configuration.
 
 ## Manual Installation
 This mod requires BepInEx to work. BepInEx is a modding framework which allows multiple mods to be loaded.
@@ -43,6 +46,7 @@ and `winhttp.dll` files. Or you can simply remove and reinstall the game.
 
 ## Changelog
 
+- v1.1.5: Make it work with lighthouses
 - v1.1.4: Fix island board not getting updated after going back to the main menu once
 - v1.1.3: Update Thunderstore Readme
 - v1.1.2: Update Thunderstore Readme to fix image link

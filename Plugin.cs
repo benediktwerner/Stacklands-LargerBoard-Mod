@@ -8,11 +8,13 @@ namespace LargerBoard
     [BepInPlugin("de.benediktwerner.stacklands.largerboard", PluginInfo.PLUGIN_NAME, PluginInfo.PLUGIN_VERSION)]
     public class Plugin : BaseUnityPlugin
     {
-        private static ConfigEntry<float> maxSize;
+        private static ConfigEntry<float> maxSizeWarehouses;
+        private static ConfigEntry<float> maxSizeLighthouses;
 
         private void Awake()
         {
-            maxSize = Config.Bind("General", "Max World Size", 5f, "The original max size in vanilla is 2.5");
+            maxSizeWarehouses = Config.Bind("General", "Max World Size", 2.5f, "This is the max size using just sheds and warehouses. The original max size in vanilla is 2.5");
+            maxSizeLighthouses = Config.Bind("General", "Max Lighthouses World Size", 10f, "The original max size in vanilla is 5.55");
 
             Harmony.CreateAndPatchAll(typeof(Plugin));
         }
@@ -27,33 +29,10 @@ namespace LargerBoard
         )
         {
             __runOriginal = false;
-            __result = Mathf.Clamp(__instance.CardCapIncrease(board) * 0.03f, 0.15f, maxSize.Value);
-        }
-
-        private static GameBoard islandBoard = null;
-        private static Material islandMaterial = null;
-
-        [HarmonyPatch(typeof(GameBoard), nameof(GameBoard.Update))]
-        [HarmonyPrefix]
-        private static void FixShader(GameBoard __instance)
-        {
-            if (__instance.IsCurrent && __instance.Id == "island")
-            {
-                if (islandMaterial == null || islandBoard == null || islandBoard != __instance)
-                {
-                    islandBoard = __instance;
-                    islandMaterial = __instance.GetComponent<MeshRenderer>().material;
-                }
-                if (islandMaterial == null)
-                    return;
-                if (__instance.WorldSizeIncrease < 2.5f)
-                    islandMaterial.SetVector("_Rect", new Vector4(4.3f, 0, 2.47f, -0.43f));
-                else
-                    islandMaterial.SetVector(
-                        "_Rect",
-                        new Vector4(1.8f + __instance.WorldSizeIncrease, 0, __instance.WorldSizeIncrease, -0.43f)
-                    );
-            }
+            __result = __instance.CardCapIncrease(board) * 0.03f;
+            __result = Mathf.Clamp(__result, 0.15f, maxSizeWarehouses.Value);
+            __result += __instance.BoardSizeIncrease(board) * 0.03f;
+            __result = Mathf.Clamp(__result, 0.15f, maxSizeLighthouses.Value);
         }
     }
 }
