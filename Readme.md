@@ -9,7 +9,7 @@ This mod allows increasing the limit by an arbitrary amount (though the game bre
 For backwards compbatibility (since this mod already existed before Lighthouses were a thing), this mod also
 allows you to increase the maximum board size reachable using just sheds and warehouses.
 
-By default, the max board size without lighthouses is unchanged and the max size with lighthouses is roughly doubled (the original value is 5.55, the new value is 10).
+By default, the max board size without lighthouses is unchanged and the max size with lighthouses is doubled (the original value is 7.5, the new value is 16).
 
 ## Development
 
@@ -24,6 +24,7 @@ By default, the max board size without lighthouses is unchanged and the max size
 
 ## Changelog
 
+- v1.2.1: Adjust calculations to new update
 - v1.2: Steam Workshop Support
 - v1.1.5: Make it work with lighthouses
 - v1.1.4: Fix island board not getting updated after going back to the main menu once

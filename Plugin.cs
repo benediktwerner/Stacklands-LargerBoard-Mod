@@ -17,13 +17,13 @@ namespace LargerBoard
         {
             maxSizeWarehouses = CreateConfig(
                 "Max World Size",
-                2.5f,
-                "This is the max size using just sheds and warehouses. The original max size in vanilla is 2.5"
+                4.5f,
+                "This is the max size using just sheds and warehouses. The original max size in vanilla is 4.5"
             );
             maxSizeLighthouses = CreateConfig(
                 "Max Lighthouses World Size",
-                10f,
-                "The original max size in vanilla is 5.55"
+                15f,
+                "The original max size in vanilla is 7.5"
             );
 
             Harmony.PatchAll(typeof(Plugin));
@@ -39,10 +39,11 @@ namespace LargerBoard
         )
         {
             __runOriginal = false;
-            __result = __instance.CardCapIncrease(board) * 0.03f;
-            __result = Mathf.Clamp(__result, 0.15f, maxSizeWarehouses.Value);
-            __result += __instance.BoardSizeIncrease(board) * 0.03f;
-            __result = Mathf.Clamp(__result, 0.15f, maxSizeLighthouses.Value);
+            var min = Mathf.Max(0.15f, board.PackLineWidth - 8.86f);
+            __result = __instance.CardCapIncrease(board) * 0.05f;
+            __result = Mathf.Clamp(__result, min, maxSizeWarehouses.Value);
+            __result += __instance.BoardSizeIncrease(board) * 0.05f;
+            __result = Mathf.Clamp(__result, min, maxSizeLighthouses.Value);
         }
     }
 }
