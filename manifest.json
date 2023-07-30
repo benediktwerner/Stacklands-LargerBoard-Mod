@@ -1,7 +1,5 @@
 {
-  "name": "LargerBoard",
-  "description": "Allows increasing the maximal board size",
-  "version_number": "1.1.5",
-  "dependencies": ["BepInEx-BepInExPack_Stacklands-5.4.2100"],
-  "website_url": "https://github.com/benediktwerner/Stacklands-LargerBoard-Mod"
+  "id": "LargerBoard",
+  "name": "Larger Board",
+  "version": "1.2.0"
 }

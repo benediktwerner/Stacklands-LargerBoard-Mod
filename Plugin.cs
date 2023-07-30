@@ -1,22 +1,32 @@
-﻿using BepInEx;
-using BepInEx.Configuration;
-using HarmonyLib;
+﻿using HarmonyLib;
 using UnityEngine;
 
 namespace LargerBoard
 {
-    [BepInPlugin("de.benediktwerner.stacklands.largerboard", PluginInfo.PLUGIN_NAME, PluginInfo.PLUGIN_VERSION)]
-    public class Plugin : BaseUnityPlugin
+    public class Plugin : Mod
     {
         private static ConfigEntry<float> maxSizeWarehouses;
         private static ConfigEntry<float> maxSizeLighthouses;
 
+        private ConfigEntry<T> CreateConfig<T>(string name, T defaultValue, string description)
+        {
+            return Config.GetEntry<T>(name, defaultValue, new ConfigUI { Tooltip = description });
+        }
+
         private void Awake()
         {
-            maxSizeWarehouses = Config.Bind("General", "Max World Size", 2.5f, "This is the max size using just sheds and warehouses. The original max size in vanilla is 2.5");
-            maxSizeLighthouses = Config.Bind("General", "Max Lighthouses World Size", 10f, "The original max size in vanilla is 5.55");
+            maxSizeWarehouses = CreateConfig(
+                "Max World Size",
+                2.5f,
+                "This is the max size using just sheds and warehouses. The original max size in vanilla is 2.5"
+            );
+            maxSizeLighthouses = CreateConfig(
+                "Max Lighthouses World Size",
+                10f,
+                "The original max size in vanilla is 5.55"
+            );
 
-            Harmony.CreateAndPatchAll(typeof(Plugin));
+            Harmony.PatchAll(typeof(Plugin));
         }
 
         [HarmonyPatch(typeof(WorldManager), nameof(WorldManager.DetermineTargetWorldSize))]
